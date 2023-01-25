@@ -7,7 +7,7 @@ respond to user requests by making database queries regarding user log in
 information and viewing and/or editing user calendars. 
 
 - `app/`: contains core application code (controllers, models, views, helpers, mailers, channels, jobs, and assets)
--`bin/`: contains binary executable files (scripts) to start, update, deploy, or run your Rails app
+- `bin/`: contains binary executable files (scripts) to start, update, deploy, or run your Rails app
 - `config/`: contains the configuration files for the application, routes, database, etc.
 - `db/`: contains database files, database schema, and database migrations
 - `lib/`: contains extended library modules
