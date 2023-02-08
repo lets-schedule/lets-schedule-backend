@@ -24,11 +24,11 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace database setup steps here
+      - name: set up database
+        run: bundle exec rails db:migrate
       # Add or replace test runners here
       - name: Run tests
-        run: |
-        bundle exec rails db:migrate
-        bundle exec rails test
+        run: bundle exec rails test
 
   #lint:
   #  runs-on: ubuntu-latest
