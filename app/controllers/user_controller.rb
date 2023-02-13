@@ -8,6 +8,11 @@ class UserController < ApplicationController
     render json: @user, status: :ok
   end
 
+  def show
+    @user = Task.where("Type = ?", true)
+    render json: @user, status: :ok
+  end
+
   # GET /user
   def index
     users = User.all
