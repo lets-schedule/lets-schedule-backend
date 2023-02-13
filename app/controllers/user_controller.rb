@@ -3,13 +3,12 @@ class UserController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   # GET /user/{id}
+  # GET /user/{availability}
   def show
-    @user = User.find(params[:id])
-    render json: @user, status: :ok
-  end
-
-  def show
-    @user = Task.where("Type = ?", true)
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = Task.where(“type = ?“, false)
     render json: @user, status: :ok
   end
 
