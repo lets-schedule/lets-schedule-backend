@@ -23,9 +23,17 @@ class EventController < ApplicationController
     @event.destroy
   end
 
-  def event_params
-    params.require(:event).permit(:task)
-
   # PATCH /event/{id}
+  def update 
+    unless @event.update(user_params)
+      render json: {errors: @event.errors.full_messages },
+        status: :unprocessable_entity
+    end
+  end
+
+  def event_params
+    params.require(:event).permit(:task, :start_date_time, :end_date_time)
+  end
+
 
 end
