@@ -27,7 +27,12 @@
         "lines": [
           1,
           null,
+          null,
+          null,
+          null,
           1,
+          null,
+          null,
           null,
           null,
           null,
@@ -105,6 +110,55 @@
         ]
       }
     },
-    "timestamp": 1676056973
+    "timestamp": 1676320553
+  },
+  "Unit Tests": {
+    "coverage": {
+      "/Users/jamessquires/CSE403/lets-schedule-backend/test/controllers/conflict_controller_test.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamessquires/CSE403/lets-schedule-backend/test/controllers/event_controller_test.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamessquires/CSE403/lets-schedule-backend/test/controllers/task_controller_test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1676320467
   }
 }
