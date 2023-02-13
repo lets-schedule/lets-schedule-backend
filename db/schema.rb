@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_07_063714) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_13_212358) do
   create_table "conflicts", force: :cascade do |t|
     t.integer "duration"
     t.datetime "due_time"
@@ -23,6 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_063714) do
     t.datetime "end_date_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tasks_id"
+    t.index ["tasks_id"], name: "index_events_on_tasks_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -43,5 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_063714) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "tasks", column: "tasks_id"
   add_foreign_key "tasks", "users"
 end
