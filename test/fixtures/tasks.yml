@@ -4,12 +4,10 @@ one:
   title: MyString
   priority: 1
   completed_amount: 9.99
-  type: false
-  user_id: 2
+  user_id: 1
 
 two:
   title: MyString
   priority: 1
   completed_amount: 9.99
-  type: false
-  user_id: 3
+  user_id: 1

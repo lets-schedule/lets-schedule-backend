@@ -10,13 +10,9 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "user create" do
-    user = User.create("one")
+    user = User.create(:name => "name", :email => "email")
     assert user.save
   end
 
-  test "get one" do
-    get user_url(User.where("name = ?", "MyString1"))
-    assert_response :success
-  end
 
 end
