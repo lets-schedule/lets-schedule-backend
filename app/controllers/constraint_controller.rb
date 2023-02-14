@@ -1,0 +1,2 @@
+class ConstraintController < ApplicationController
+end

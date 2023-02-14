@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_213955) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_14_214607) do
   create_table "constraints", force: :cascade do |t|
     t.integer "duration"
     t.datetime "due_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contraints", force: :cascade do |t|
+    t.datetime "dueTime"
+    t.datetime "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

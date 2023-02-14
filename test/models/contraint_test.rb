@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ConflictControllerTest < ActionDispatch::IntegrationTest
+class ContraintTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
