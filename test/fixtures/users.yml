@@ -1,11 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  id: 3
+  name: MyString1
+  email: MyString1@email.com
+  id: 1
 
 two:
-  name: MyString
-  email: MyString
+  name: MyString2
+  email: MyString2email.com
   id: 2
+
+three:
+  name: MyString3
+  email: MyString3@email.com

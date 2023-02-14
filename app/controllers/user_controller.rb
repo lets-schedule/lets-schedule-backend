@@ -9,7 +9,8 @@ class UserController < ApplicationController
       @user = User.find(params[:id])
     else
       @user = Task.where(“type = ?“, false)
-    render json: @user, status: :ok
+      render json: @user, status: :ok
+    end
   end
 
   # GET /user
@@ -30,7 +31,7 @@ class UserController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :type)
   end
 
 end
