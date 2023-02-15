@@ -5,13 +5,13 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   # assert true
   # end
   test "user should have name and email" do
-    user = User.new
-    assert_not user.save, "Saved user without name and email"
+    @user = User.new
+    assert_not @user.save, "Saved user without name and email"
   end
 
   test "user create" do
-    user = User.create(:name => "name", :email => "email")
-    assert user.save
+    @user = User.create(:name => "name", :email => "email")
+    assert @user.save
   end
 
 

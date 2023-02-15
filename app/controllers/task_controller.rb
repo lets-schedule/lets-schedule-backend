@@ -1,19 +1,29 @@
 class TaskController < ApplicationController
+
+  protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
+
   def show
     @task = Task.find(params[:id])
     render json: @task, status: :ok
   end
 
   def index
-    tasks = Task.all
-    render json: tasks, status: :ok
+    @task = Task.all
+    render json: @task, status: :ok
   end
 
   def create
-    task = Task.create!(task_params)
-    render json: taks, status: :ok
+    @task = Task.create!(task_params)
+    render json: @task, status: :ok
+  end
+
+  def destroy
+    Task.destroy(params[:id])
+    
   end
 
   def task_params
-    params.require(:task).permit(:user, events: [], :conflict)
+    params.require(:task).permit(:title, :user_id) 
+  end
 end

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-02-14T14:05:37-08:00">2023-02-14T14:05:37-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-02-14T19:01:02-08:00">2023-02-14T19:01:02-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -664,7 +664,7 @@
 
             
 
-            <code class="ruby">    user = User.new</code>
+            <code class="ruby">    @user = User.new</code>
           </li>
         </div>
       
@@ -675,7 +675,7 @@
 
             
 
-            <code class="ruby">    assert_not user.save, &quot;Saved user without name and email&quot;</code>
+            <code class="ruby">    assert_not @user.save, &quot;Saved user without name and email&quot;</code>
           </li>
         </div>
       
@@ -719,7 +719,7 @@
 
             
 
-            <code class="ruby">    user = User.create(:name =&gt; &quot;name&quot;, :email =&gt; &quot;email&quot;)</code>
+            <code class="ruby">    @user = User.create(:name =&gt; &quot;name&quot;, :email =&gt; &quot;email&quot;)</code>
           </li>
         </div>
       
@@ -730,7 +730,7 @@
 
             
 
-            <code class="ruby">    assert user.save</code>
+            <code class="ruby">    assert @user.save</code>
           </li>
         </div>
       
