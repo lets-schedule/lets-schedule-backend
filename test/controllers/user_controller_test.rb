@@ -10,7 +10,7 @@ class UserControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "user create" do
-    @user = User.create(:name => "name", :email => "email")
+    @user = User.create(:name => "name", :email => "email@email.com")
     assert @user.save
   end
 
