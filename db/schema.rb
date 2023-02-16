@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_214607) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_16_000844) do
   create_table "constraints", force: :cascade do |t|
     t.integer "duration"
     t.datetime "due_time"
@@ -30,8 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_214607) do
     t.datetime "end_date_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tasks_id"
-    t.index ["tasks_id"], name: "index_events_on_tasks_id"
+    t.integer "task_id"
+    t.index ["task_id"], name: "index_events_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_214607) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "events", "tasks", column: "tasks_id"
+  add_foreign_key "events", "tasks"
   add_foreign_key "tasks", "constraints", column: "constraints_id"
   add_foreign_key "tasks", "users"
 end
