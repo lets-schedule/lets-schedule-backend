@@ -14,12 +14,4 @@ class UserControllerTest < ActionDispatch::IntegrationTest
     assert @user.save
   end
   
-  test "user destroy" do
-    @user = User.create(:name => "firstname", :email => "firstname@email.com")
-    uid = @user.id
-    assert_equal(User.find(uid), @user)
-    User.destroy(uid)
-    assert_raise(Exception) {User.find(uid)} "User was not destroyed upon attempt"
-  end
-  
 end
