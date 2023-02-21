@@ -21,6 +21,8 @@ jobs:
       # Add or replace dependency steps here
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        with:
+          ruby-version: 3.2
       # install bundles
       - name: Install bundles
         run: bundle install
