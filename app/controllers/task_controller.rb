@@ -13,7 +13,14 @@ class TaskController < ApplicationController
 
   def create
     devise_api_token = current_devise_api_token;
-    @task = devise_api_token.resource_owner.tasks.create(task_params)
+    @task = devise_api_token.resource_owner.tasks.create!(task_params)
+    render json: @task, status: :ok
+  end
+
+  def destroy
+    devise_api_token = current_devise_api_token
+    @task =  devise_api_token.resource_owner.tasks.find(params[:id])
+    @task.destroy;
     render json: @task, status: :ok
   end
 
