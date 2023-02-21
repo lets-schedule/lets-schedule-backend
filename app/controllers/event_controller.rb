@@ -1,39 +1,32 @@
 class EventController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
+  before_action :authenticate_devise_api_token!
 
-  # GET /event/{id}
-  def show
-    @event = Event.find(params[:id])
-    render json: @event, status: :ok
-  end
-
-  # GET /event
   def index
-    @events = Event.all
-    render json: @events, status: :ok
+    render json: current_devise_api_user.tasks.find(params[:task_id]).events, status: :ok
   end
 
-  # POST /event/{id}
+  def show
+    devise_api_token = current_devise_api_token
+    render json: devise_api_token.resource_owner.tasks.find(params[:id]).events.find(params[:id]), status: :ok
+  end
+
   def create
-    @event = Event.create!(event_params)
+    devise_api_token = current_devise_api_token;
+    @event = devise_api_token.resource_owner.tasks.find(params[:task_id]).events.create!(event_params)
     render json: @event, status: :ok
   end
 
-  # DELETE /event/{id}
   def destroy
-    Event.destory(params[id])
+    devise_api_token = current_devise_api_token;
+    @event = devise_api_token.resource_owner.tasks.find(params[:task_id]).events.find(params[:id])
+    @event.destroy
+    render json: @event, status: :ok
   end
 
-  # PATCH /event/{id}
-  def update 
-    unless @event.update(user_params)
-      render json: {errors: @event.errors.full_messages },
-        status: :unprocessable_entity
-    end
-  end
+  private
 
   def event_params
-    params.require(:event).permit(:task_id, :start_date_time, :end_date_time)
+    params.require(:event).permit(:startTime, :endTime)
   end
-
-
 end
