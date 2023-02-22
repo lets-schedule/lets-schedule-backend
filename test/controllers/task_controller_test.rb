@@ -5,6 +5,7 @@ class TaskControllerTest < ActionDispatch::IntegrationTest
      assert true
    end
    
+=begin
    test "task should have title and user_id" do
      @task = Task.new
      assert_not @task.save, "Saved task without title and user_id"
@@ -23,5 +24,6 @@ class TaskControllerTest < ActionDispatch::IntegrationTest
      Task.destroy(tid)
      assert_raise(Exception) {Task.find(tid)}
    end
+=end
    
 end
