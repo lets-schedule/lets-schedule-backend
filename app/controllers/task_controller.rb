@@ -3,7 +3,17 @@ class TaskController < ApplicationController
   before_action :authenticate_devise_api_token!
 
   def index
-    render json: current_devise_api_user.tasks, status: :ok
+
+    @tasks = current_devise_api_user.tasks
+
+    if params[:sort].present?
+
+      @tasks = current_devise_api_user.tasks.order(params[:sort])
+
+    end
+
+    render json: @tasks, status: :ok
+
   end
 
   def show
@@ -27,6 +37,6 @@ class TaskController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :priority, :category)
+    params.require(:task).permit(:title, :priority, :category, :sort)
   end
 end

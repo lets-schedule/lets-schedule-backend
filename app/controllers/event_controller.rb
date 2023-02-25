@@ -3,7 +3,17 @@ class EventController < ApplicationController
   before_action :authenticate_devise_api_token!
 
   def index
-    render json: current_devise_api_user.tasks.find(params[:task_id]).events, status: :ok
+    @curr_task = current_devise_api_user.tasks.find(params[:task_id])
+
+    if params[:filter].present?
+      filter_params = params.require(:filter)
+
+      @user = @curr_task.events.where("startTime " + params[:filter] + " ?", DateTime.parse(params[:startTime]))
+    else
+      @user = @curr_task.events
+    end
+
+    render json: @user, status: :ok
   end
 
   def show
@@ -27,6 +37,6 @@ class EventController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:startTime, :endTime)
+    params.require(:event).permit(:startTime, :endTime, :filter)
   end
 end
