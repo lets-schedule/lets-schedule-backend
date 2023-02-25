@@ -34,7 +34,17 @@ class TaskController < ApplicationController
     render json: @task, status: :ok
   end
 
+  def update
+    
+    if current_devise_api_user.tasks.find(params[id]).update(task_params)
+      render json: current_devise_api_user.tasks.find(params[id]), status: :ok
+    else
+      render json: { errors: current_devise_api_user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
+
 
   def task_params
     params.require(:task).permit(:title, :priority, :category, :sort)
