@@ -3,7 +3,17 @@ class TaskController < ApplicationController
   before_action :authenticate_devise_api_token!
 
   def index
-    render json: current_devise_api_user.tasks, status: :ok
+
+    @tasks = current_devise_api_user.tasks
+
+    if params[:sort].present?
+
+      @tasks = current_devise_api_user.tasks.order(params[:sort])
+
+    end
+
+    render json: @tasks, status: :ok
+
   end
 
   def show
@@ -24,9 +34,19 @@ class TaskController < ApplicationController
     render json: @task, status: :ok
   end
 
+  def update
+    
+    if current_devise_api_user.tasks.find(params[id]).update(task_params)
+      render json: current_devise_api_user.tasks.find(params[id]), status: :ok
+    else
+      render json: { errors: current_devise_api_user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
+
   def task_params
-    params.require(:task).permit(:title, :priority, :category)
+    params.require(:task).permit(:title, :priority, :category, :sort)
   end
 end

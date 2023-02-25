@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :task, only: [:index, :show, :create, :destroy] do
-    resources :event, only: [:index, :show, :create, :destroy]
-    resources :constraint, only: [:index, :create, :destroy]
+  patch '/user', to: 'user#update'
+  get '/user', to: 'user#index'
+  resources :task, only: [:index, :show, :create, :destroy, :update] do
+    resources :event, only: [:index, :show, :create, :destroy, :update]
+    resources :constraint, only: [:index, :create, :update, :destroy]
   end
 end
