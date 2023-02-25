@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :user, only: [:destroy]
   resources :task, only: [:index, :show, :create, :destroy, :update] do
     resources :event, only: [:index, :show, :create, :destroy, :update]
-    resources :constraint, only: [:index, :create, :destroy]
+    resources :constraint, only: [:index, :create, :update, :destroy]
   end
 end

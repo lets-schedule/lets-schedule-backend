@@ -20,6 +20,18 @@ class ConstraintController < ApplicationController
     render json: @constraint, status: :ok
   end
 
+  def update
+    
+    if current_devise_api_user.tasks.find(params[:task_id]).constraint.update(constraint_params)
+      
+      render json: current_devise_api_user.tasks.find(params[:task_id]).constraint, status: :ok
+    else
+      render json: { errors: current_devise_api_user.errors.full_messages }, status: :unprocessable_entity
+    end
+
+  end
+
+
   private
 
   def constraint_params
