@@ -1,9 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  dueTime: 2023-02-20 18:14:26
+constraint_one:
+  dueTime: 2023-02-21 15:00:00
   duration: 1
+  task_id: 6
 
-two:
-  dueTime: 2023-02-20 18:14:26
-  duration: 1

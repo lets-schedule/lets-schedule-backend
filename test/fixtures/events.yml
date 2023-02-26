@@ -1,9 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  startTime: 2023-02-20 17:16:52
-  endTime: 2023-02-20 17:16:52
+# task_id = 4
+event_1:
+  startTime: 2023-02-20 12:00:00
+  endTime: 2023-02-20 13:00:00
+  id: 1
+  task_id: 4
 
-two:
-  startTime: 2023-02-20 17:16:52
-  endTime: 2023-02-20 17:16:52
+# task id = 5 -- 2 events
+event_2:
+  startTime: 2023-02-20 14:00:00
+  endTime: 2023-02-20 15:00:00
+  id: 2
+  task_id: 5
+
+event_3:
+  startTime: 2023-02-20 14:00:00
+  endTime: 2023-02-21 15:00:00
+  id: 3
+  task_id: 5
+
+# task_id = 6 -- event constraint
+event_4:
+  startTime: 2023-02-20 14:00:00
+  endTime: 2023-02-21 15:00:00
+  id: 4
+  task_id: 6
+
+
+

@@ -1,11 +1,30 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+task_noEvents:
+  title: "a task with no events"
   priority: 1
-  category: 1
+  category: 2
+  id: 3
+  user_id: 5
 
-two:
-  title: MyString
-  priority: 1
-  category: 1
+task_1Event:
+  title: "a task with 1 event"
+  priority: 2
+  category: 3
+  id: 4
+  user_id: 6
+
+task_2Events:
+  title: "a task with 2 events"
+  priority: 3
+  category: 4
+  id: 5
+  user_id: 7
+
+task_constraint:
+  title: "a task with a constraint"
+  prioirty: 4
+  category: 5
+  id: 8
+
+
