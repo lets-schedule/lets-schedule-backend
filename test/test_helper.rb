@@ -10,4 +10,16 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  # Helper to sign in user -- note that password is assumed to be "password"
+  def sign_in_api_user(user_email)
+    post "/users/tokens/sign_in",
+      params: { email: user_email, password: "password"}
+
+    assert_response :success
+    auth_reponse = "Bearer " + JSON.parse(@response.body)["token"]
+
+    auth_reponse
+
+  end
 end

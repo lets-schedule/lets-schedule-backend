@@ -23,8 +23,9 @@ task_2Events:
 
 task_constraint:
   title: "a task with a constraint"
-  prioirty: 4
+  priority: 4
   category: 5
-  id: 8
+  id: 6
+  user_id: 8
 
 
