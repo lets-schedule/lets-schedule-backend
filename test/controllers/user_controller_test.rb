@@ -144,14 +144,12 @@ class UserControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
 
-    auth_response = JSON.parse(@request.body)["refresh_token"]
+    auth_response = JSON.parse(@response.body)["refresh_token"]
 
-    logger.debug auth_response
+     post "/users/tokens/refresh",
+       headers: { 'Authorization': "Bearer " + auth_response }
 
-    post "/users/tokens/refresh",
-      headers: { 'Authorization': "Bearer " + auth_response }
-
-    assert_response :success
+     assert_response :success
   end
 
 end
