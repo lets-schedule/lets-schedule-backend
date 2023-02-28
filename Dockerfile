@@ -10,7 +10,8 @@ WORKDIR /rails
 
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true" \
-    RAILS_ENV="development"
+    RAILS_ENV="production" \
+    BUNDLE_WITHOUT="development"
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
@@ -19,9 +20,9 @@ COPY . .
 
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
-RUN SECRET_KEY_BASE_DUMY=1 bundle exec rails assets:precompile
+#RUN SECRET_KEY_BASE_DUMY=1 bundle exec rails assets:precompile
 
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+ENTRYPOINT ["/rails/bin/docker-entrypoint.sh"]
 
 RUN bin/rails db:migrate
 
