@@ -28,4 +28,53 @@ task_constraint:
   id: 6
   user_id: 8
 
+# associated with user id: 9
+task_one_of_two_noevents:
+  title: "the first task of two that have no events"
+  priority: 5
+  category: 6
+  id: 7
+  user_id: 9
 
+task_two_of_two_noevents:
+  title: "the second task of two that have no events"
+  priority: 1
+  category: 1
+  id: 8
+  user_id: 9
+
+# associated with user id: 10
+task_one_of_three_noevents:
+  title: "the first task of three that have no events"
+  priority: 3
+  category: 1
+  id: 10
+  user_id: 10
+
+task_two_of_three_noevents:
+  title: "the second task of three that have no events"
+  priority: 2
+  category: 3
+  id: 11
+  user_id: 10
+
+task_three_of_three_noevents:
+  title: "the third task of three that have no events"
+  priority: 1
+  category: 2
+  id: 12
+  user_id: 10
+
+task_with_constraint:
+  title: "a task with a constraint"
+  priority: 2
+  category: 5
+  id: 13
+  user_id: 12
+
+task_noconstraint:
+  title: "a task without a constraint...yet"
+  priority: 3
+  category: 4
+  id: 14
+  user_id: 13

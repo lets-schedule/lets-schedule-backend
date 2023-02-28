@@ -36,8 +36,9 @@ class TaskController < ApplicationController
 
   def update
     
-    if current_devise_api_user.tasks.find(params[id]).update(task_params)
-      render json: current_devise_api_user.tasks.find(params[id]), status: :ok
+    curr_token = current_devise_api_token
+    if curr_token.resource_owner.tasks.find(params[:id]).update(task_params)
+      render json: current_devise_api_user.tasks.find(params[:id]), status: :ok
     else
       render json: { errors: current_devise_api_user.errors.full_messages }, status: :unprocessable_entity
     end
