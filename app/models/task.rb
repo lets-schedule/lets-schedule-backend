@@ -6,4 +6,7 @@ class Task < ApplicationRecord
   has_one :constraint, dependent: :destroy
 
 
+  validates :title, presence: true
+
+
 end

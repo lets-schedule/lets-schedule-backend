@@ -31,8 +31,9 @@ user_change_name:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 4
 
+# task id: 3
 user_1task_noEvents:
-  email: "task_noEvents@email.com"
+  email: "task_noevents@email.com"
   name: "user with 1 task and no events"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 5
@@ -43,17 +44,55 @@ user_1task_1Event:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 6
 
+# tasks: 5
 user_1task_2Events:
-  email: "task_2Events@email.com"
+  email: "task_2events@email.com"
   name: "user with 1 task and 2 events"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 7
 
-user_task_wEventConstraint:
-  email: "task_eventConstraint@email.com"
+user_task_wtaskconstraint:
+  email: "task_taskconstraint@email.com"
   name: "user with 1 task with event and constraint"
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 8
+
+# has tasks id: 8 + 9
+user_twotasks_noevents:
+  email: "twotask_noevents@email.com"
+  name: "user with 2 tasks and no events"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 9
+
+# has tasks id: 10, 11, 12
+user_three_tasks_noevents:
+  email: "threetask_noevents@email.com"
+  name: "user with 3 tasks but no events"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 10
+
+user_with_no_tasks:
+  email: "user_with_no_tasks@email.com"
+  name: "user with no tasks"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 11
+
+#task id: 13
+user_task_constraint:
+  email: "user_task_constraint@email.com"
+  name: "a user with a task and a constraint"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 12
+
+#task id: 14
+user_task_noconstraint:
+  email: "user_task_noconstraint@email.com"
+  name: "a user with a task, who doesnt have a constraint YET"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 13
+
+
+
 
 
 
