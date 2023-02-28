@@ -14,3 +14,46 @@ james:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 1
 
+user_has_name:
+  email: "user_has_name@email.com"
+  name: "user's name"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 2
+
+user_no_name:
+  email: "user_no_name@email.com"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 3
+
+user_change_name:
+  email: "user_change_name@email.com"
+  name: "original name"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 4
+
+user_1task_noEvents:
+  email: "task_noEvents@email.com"
+  name: "user with 1 task and no events"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 5
+
+user_1task_1Event:
+  email: "task_1Event@email.com"
+  name: "user with 1 task and 1 event"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 6
+
+user_1task_2Events:
+  email: "task_2Events@email.com"
+  name: "user with 1 task and 2 events"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 7
+
+user_task_wEventConstraint:
+  email: "task_eventConstraint@email.com"
+  name: "user with 1 task with event and constraint"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 8
+
+
+

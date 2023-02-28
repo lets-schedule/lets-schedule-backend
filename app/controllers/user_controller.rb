@@ -4,13 +4,13 @@ class UserController < ApplicationController
 
   def index
 
-    render json: current_devise_api_user.name.to_s, status: :ok
+    render json: { name: current_devise_api_user.name }, status: :ok
 
   end
 
   def update
 
-    if current_devise_api_user.update(user_params)
+    if current_devise_api_token.resource_owner.update(user_params)
       render json: current_devise_api_user, status: :ok
     else
       render json: { errors: current_devise_api_user.errors.full_messages }, status: :unprocessable_entity
@@ -20,7 +20,7 @@ class UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name)
+    params.permit(:name)
   end
 
 end
