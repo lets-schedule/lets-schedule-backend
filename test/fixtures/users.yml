@@ -91,8 +91,24 @@ user_task_noconstraint:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 13
 
+# event test users
+user_event_tests_oneEvent:
+  email: "user_event_test_oneevent@email.com"
+  name: "A user with a task and event < 2023-03-02"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 14
 
+user_event_tests_twoEvents:
+  email: "user_event_test_twoevents@email.com"
+  name: "A user with two tasks and two events"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 15
 
+user_event_tests_twoEvents_sameStartEndTimes:
+  email: "user_event_test_twoevents_samestartendtimes@email.com"
+  name: "A user with two tasks and two events, the events have the same start and end times"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 16
 
 
 
