@@ -78,3 +78,40 @@ task_noconstraint:
   category: 4
   id: 14
   user_id: 13
+
+# event test tasks
+task_eventTests_oneEvent:
+  title: "A task with an event whos startTime < 2023-03-02"
+  priority: 1
+  category: 1
+  id: 15
+  user_id: 14
+
+# event id 6
+task_eventTests_event_2:
+  title: "A task with an event"
+  priority: 1
+  category: 1
+  id: 16
+  user_id: 15
+# event id 7
+task_eventTests_event_3:
+  title: "A task with an event"
+  priority: 1
+  category: 1
+  id: 17
+  user_id: 15
+# event id 8 user-id 16
+task_eventTests_event_4:
+  title: "A task with an event"
+  priority: 1
+  category: 1
+  id: 18
+  user_id: 16
+# event id 9 user_id 16
+task_eventTests_event_5:
+  title: "A task with an event"
+  priority: 1
+  category: 1
+  id: 19
+  user_id: 16
