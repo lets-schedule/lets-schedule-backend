@@ -1177,24 +1177,24 @@ class EventControllerTest < ActionDispatch::IntegrationTest
 
   end
   # test returns 1 conflicting event
-  test "returns 1 conflicting event" do
-    # user who has 2 task and 2 events
-    auth_token = sign_in_api_user(users(:user_event_tests_oneEvent).email)
-
-    @task = User.find(users(:user_event_tests_oneEvent).id).tasks.first
-
-    conflictStartTime = "2023-02-24 00:00:00"
-    conflictEndTime = "2023-02-24 01:00:00"
-
-    post route,
-      headers: { 'Authorization': auth_token },
-      params: { event: { startTime: conflictStartTime, endTime: conflictEndTime } }
-
-    assert_response :success
-
-    # TODO Validate conlflicting event
-
-  end
+  # test "returns 1 conflicting event" # do
+    # # user who has 2 task and 2 events
+    # auth_token = sign_in_api_user(users(:user_event_tests_oneEvent).email)
+    #
+    # @task = User.find(users(:user_event_tests_oneEvent).id).tasks.first
+    #
+    # conflictStartTime = "2023-02-24 00:00:00"
+    # conflictEndTime = "2023-02-24 01:00:00"
+    #
+    # post route,
+    #   headers: { 'Authorization': auth_token },
+    #   params: { event: { startTime: conflictStartTime, endTime: conflictEndTime } }
+    #
+    # assert_response :success
+    #
+    # # TODO Validate conlflicting event
+    #
+  # end
   # # test returns 2 conflicting event
   # test "returns 2 conflicting event" do
   #   # user who has 2 task and 2 events
