@@ -110,5 +110,11 @@ user_event_tests_twoEvents_sameStartEndTimes:
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   id: 16
 
+user_10tasks_10constraints:
+  email: "user_with_lots_of_constraints@email.com"
+  name: "A user with a lot of constraints"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  id: 17
+
 
 

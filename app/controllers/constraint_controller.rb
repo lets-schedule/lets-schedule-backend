@@ -7,6 +7,15 @@ class ConstraintController < ApplicationController
     render json: current_devise_api_user.tasks.find(params[:task_id]).constraint, status: :ok
   end
 
+  # /constraint
+
+  def show
+    curr_user = current_devise_api_user
+
+    @constraints = Constraint.where(task_id: current_devise_api_token.resource_owner.tasks)
+    render json: @constraints, status: :ok
+  end
+
   def create
     devise_api_token = current_devise_api_token
     @constraint = devise_api_token.resource_owner.tasks.find(params[:task_id]).create_constraint(constraint_params)

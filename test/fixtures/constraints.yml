@@ -10,3 +10,53 @@ constraint_for_task_13:
   duration: 10
   task_id: 13
 
+many_constraint_1:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 20
+
+many_constraint_2:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 21
+
+many_constraint_3:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 22
+
+many_constraint_4:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 23
+
+many_constraint_5:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 25
+
+many_constraint_6:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 26
+
+many_constraint_7:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 27
+
+many_constraint_8:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 28
+
+many_constraint_9:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 29
+
+many_constraint_10:
+  dueTime: "2023-02-21 00:00:00 UTC"
+  duration: 30
+  task_id: 30
+

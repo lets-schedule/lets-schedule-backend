@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/event', to: 'event#filter'
   patch '/task/:task_id/constraint', to: 'constraint#update'
   delete '/task/:task_id/constraint', to: 'constraint#destroy'
+  get '/constraint', to: 'constraint#show'
   resources :task, only: [:index, :show, :create, :destroy, :update] do
     resources :event, only: [:index, :show, :create, :destroy, :update]
     resources :constraint, only: [:index, :create]

@@ -115,3 +115,74 @@ task_eventTests_event_5:
   category: 1
   id: 19
   user_id: 16
+
+# constraint tasks
+task_manyConstraints_1:
+  title: "task 1 of many constraints"
+  priority: 1
+  category: 1
+  id: 20
+  user_id: 17
+
+task_manyConstraints_2:
+  title: "task 2 of many constraints"
+  priority: 1
+  category: 1
+  id: 21
+  user_id: 17
+
+task_manyConstraints_3:
+  title: "task 3 of many constraints"
+  priority: 3
+  category: 1
+  id: 22
+  user_id: 17
+
+task_manyConstraints_4:
+  title: "task 4 of many constraints"
+  priority: 4
+  category: 1
+  id: 23
+  user_id: 17
+
+task_manyConstraints_5:
+  title: "task 5 of many constraints"
+  priority: 5
+  category: 5
+  id: 25
+  user_id: 17
+
+task_manyConstraints_6:
+  title: "task 6 of many constraints"
+  priority: 6
+  category: 6
+  id: 26
+  user_id: 17
+
+task_manyConstraints_7:
+  title: "task 7 of many constraints"
+  priority: 7
+  category: 7
+  id: 27
+  user_id: 17
+
+task_manyConstraints_8:
+  title: "task 8 of many constraints"
+  priority: 8
+  category: 8
+  id: 28
+  user_id: 17
+
+task_manyConstraints_9:
+  title: "task 9 of many constraints"
+  priority: 9
+  category: 9
+  id: 29
+  user_id: 17
+
+task_manyConstraints_10:
+  title: "task 10 of many constraints"
+  priority: 10
+  category: 10
+  id: 30
+  user_id: 17

@@ -197,5 +197,24 @@ class ConstraintControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "get all constraints" do
+    tokenAuth = sign_in_api_user(users(:user_10tasks_10constraints).email)
+
+    route = "/constraint"
+
+    get route,
+      headers: { 'Authorization': tokenAuth }
+
+    assert_response :success
+
+    puts @response.body
+    # @createdConstraints = Constraint.find(task_id: User.find(users(:user_10tasks_10constraints).id).tasks)
+
+    # puts @createdConstraints
+    # assert_equal newDuration, @createdConstraint.duration
+    # assert_nil @createdConstraint.dueTime
+  end
+
+
 end
 
